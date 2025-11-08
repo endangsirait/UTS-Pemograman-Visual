@@ -1,0 +1,157 @@
+@model Dealermotor.Models.Motor
+@{
+    ViewData["Title"] = "Edit Motor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h4><i class="fas fa-edit"></i> Edit Motor: @Model.Brand @Model.Model</h4>
+        <a asp-action="Motors" class="btn btn-admin-secondary">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+    </div>
+
+    <form method="post" asp-action="EditMotor" asp-route-id="@Model.Id">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Brand *</label>
+                    <input type="text" name="Brand" class="admin-form-control" value="@Model.Brand" required />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Model *</label>
+                    <input type="text" name="Model" class="admin-form-control" value="@Model.Model" required />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Tahun *</label>
+                    <input type="text" name="Year" class="admin-form-control" value="@Model.Year" required />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Kategori *</label>
+                    <select name="Category" class="admin-form-control" required>
+                        <option value="Sport" selected="@(Model.Category == "Sport")">Sport</option>
+                        <option value="Cruiser" selected="@(Model.Category == "Cruiser")">Cruiser</option>
+                        <option value="Scooter" selected="@(Model.Category == "Scooter")">Scooter</option>
+                        <option value="Naked" selected="@(Model.Category == "Naked")">Naked</option>
+                        <option value="Touring" selected="@(Model.Category == "Touring")">Touring</option>
+                        <option value="Off-Road" selected="@(Model.Category == "Off-Road")">Off-Road</option>
+                        <option value="Classic" selected="@(Model.Category == "Classic")">Classic</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Tipe *</label>
+                    <select name="Type" class="admin-form-control" required>
+                        <option value="Sport" selected="@(Model.Type == "Sport")">Sport</option>
+                        <option value="Cruiser" selected="@(Model.Type == "Cruiser")">Cruiser</option>
+                        <option value="Scooter" selected="@(Model.Type == "Scooter")">Scooter</option>
+                        <option value="Naked" selected="@(Model.Type == "Naked")">Naked</option>
+                        <option value="Touring" selected="@(Model.Type == "Touring")">Touring</option>
+                        <option value="Off-Road" selected="@(Model.Type == "Off-Road")">Off-Road</option>
+                        <option value="Classic" selected="@(Model.Type == "Classic")">Classic</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Kapasitas Mesin (CC) *</label>
+                    <input type="number" name="EngineCapacity" class="admin-form-control" value="@Model.EngineCapacity" min="0" required />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Transmisi *</label>
+                    <select name="Transmission" class="admin-form-control" required>
+                        <option value="Manual" selected="@(Model.Transmission == "Manual")">Manual</option>
+                        <option value="Automatic" selected="@(Model.Transmission == "Automatic")">Automatic</option>
+                        <option value="CVT" selected="@(Model.Transmission == "CVT")">CVT</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Bahan Bakar *</label>
+                    <select name="FuelType" class="admin-form-control" required>
+                        <option value="Bensin" selected="@(Model.FuelType == "Bensin")">Bensin</option>
+                        <option value="Listrik" selected="@(Model.FuelType == "Listrik")">Listrik</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Warna *</label>
+                    <input type="text" name="Color" class="admin-form-control" value="@Model.Color" required />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Kilometer</label>
+                    <input type="number" name="Mileage" class="admin-form-control" value="@Model.Mileage" min="0" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Harga (Rp) *</label>
+                    <input type="number" name="Price" class="admin-form-control" value="@Model.Price" min="0" required />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Stok *</label>
+                    <input type="number" name="Stock" class="admin-form-control" value="@Model.Stock" min="0" required />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">URL Gambar Motor</label>
+                    <input type="url" name="ImageUrl" class="admin-form-control" value="@Model.ImageUrl" />
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-form-group">
+            <label class="admin-form-label">Deskripsi *</label>
+            <textarea name="Description" class="admin-form-control" rows="5" required>@Model.Description</textarea>
+        </div>
+
+        <input type="hidden" name="CreatedAt" value="@Model.CreatedAt" />
+
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-admin-primary">
+                <i class="fas fa-save"></i> Update Motor
+            </button>
+            <a asp-action="Motors" class="btn btn-secondary">
+                <i class="fas fa-times"></i> Batal
+            </a>
+        </div>
+    </form>
+</div>
+

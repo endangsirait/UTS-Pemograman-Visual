@@ -1,0 +1,85 @@
+@model List<Dealermotor.Models.Motor>
+@{
+    ViewData["Title"] = "Kelola Motor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h4><i class="fas fa-motorcycle"></i> Daftar Motor</h4>
+        <a asp-action="CreateMotor" class="btn btn-admin-primary">
+            <i class="fas fa-plus"></i> Tambah Motor Baru
+        </a>
+    </div>
+    
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> Belum ada motor. Tambahkan motor pertama Anda!
+        </div>
+    }
+    else
+    {
+        <div class="admin-table">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Gambar</th>
+                        <th>Brand & Model</th>
+                        <th>Tahun</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var motor in Model)
+                    {
+                        <tr>
+                            <td>
+                                @if (!string.IsNullOrEmpty(motor.ImageUrl))
+                                {
+                                    <img src="@motor.ImageUrl" alt="Motor" style="width: 80px; height: 60px; object-fit: cover; border-radius: 5px;">
+                                }
+                                else
+                                {
+                                    <div style="width: 80px; height: 60px; background: #ddd; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-motorcycle"></i>
+                                    </div>
+                                }
+                            </td>
+                            <td><strong>@motor.Brand @motor.Model</strong><br><small class="text-muted">@motor.EngineCapacity CC</small></td>
+                            <td>@motor.Year</td>
+                            <td><span class="badge bg-info">@motor.Category</span></td>
+                            <td><strong>Rp @motor.Price.ToString("N0")</strong></td>
+                            <td>
+                                @if (motor.Stock > 10)
+                                {
+                                    <span class="badge bg-success">@motor.Stock</span>
+                                }
+                                else if (motor.Stock > 0)
+                                {
+                                    <span class="badge bg-warning">@motor.Stock</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Habis</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="EditMotor" asp-route-id="@motor.Id" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-action="DeleteMotor" asp-route-id="@motor.Id" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus motor ini?')">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+

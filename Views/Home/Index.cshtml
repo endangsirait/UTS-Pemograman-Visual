@@ -1,0 +1,397 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealermotor - Dealer Motor Terpercaya</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--motor-dark);
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: var(--motor-gradient-dark);
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid var(--motor-orange);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--motor-orange) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--motor-orange) !important;
+        }
+
+        .btn-nav {
+            margin: 0 5px;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 2px solid var(--motor-orange);
+            color: var(--motor-orange);
+        }
+
+        .btn-login:hover {
+            background: var(--motor-orange);
+            color: white;
+        }
+
+        .btn-register {
+            background: var(--motor-gradient);
+            border: 2px solid var(--motor-orange);
+            color: white;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.5);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--motor-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+        }
+
+        .hero-icon {
+            font-size: 6rem;
+            color: var(--motor-orange);
+            margin-bottom: 30px;
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+
+        @@keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: var(--motor-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--motor-gold);
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons .btn {
+            margin: 10px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-primary {
+            background: var(--motor-gradient);
+            color: white;
+            border: 2px solid var(--motor-orange);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+            color: white;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: var(--motor-orange);
+            border: 2px solid var(--motor-orange);
+        }
+
+        .btn-hero-secondary:hover {
+            background: var(--motor-orange);
+            color: white;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background: var(--motor-dark);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--motor-orange);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card {
+            background: #2d2d2d;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 3px solid var(--motor-orange);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+            border-color: var(--motor-red);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--motor-orange);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--motor-orange);
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--motor-gradient-dark);
+            color: white;
+            padding: 40px 20px 20px;
+            border-top: 4px solid var(--motor-orange);
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--motor-orange);
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            color: var(--motor-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--motor-orange);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            color: #999;
+        }
+
+        .footer-quote {
+            color: var(--motor-gold);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @@media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-motorcycle"></i> Dealermotor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Customer" asp-action="Catalog">Katalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Tentang</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-nav btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Masuk
+                    </a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-nav btn-register">
+                        <i class="fas fa-user-plus"></i> Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="text-center">
+            <div class="hero-icon">
+                <i class="fas fa-motorcycle"></i>
+            </div>
+            <h1 class="hero-title">🏍️ Selamat Datang di Dealermotor! 🏍️</h1>
+            <p class="hero-subtitle">
+                Temukan motor impian Anda dan mulai petualangan di jalan raya!
+            </p>
+            <div class="hero-buttons">
+                <a asp-controller="Customer" asp-action="Catalog" class="btn btn-hero-primary">
+                    <i class="fas fa-motorcycle"></i> Jelajahi Katalog
+                </a>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-hero-secondary">
+                    <i class="fas fa-user-plus"></i> Gabung Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">🏍️ Kenapa Memilih Dealermotor? 🏍️</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <h3 class="feature-title">🏍️ Koleksi Lengkap</h3>
+                        <p class="feature-desc">
+                            Berbagai brand dan model motor terbaik dari Honda, Yamaha, Kawasaki, dan banyak lagi. Temukan motor impian Anda!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="feature-title">🚚 Pengiriman Cepat</h3>
+                        <p class="feature-desc">
+                            Gratis ongkir ke seluruh Indonesia. Motor sampai lebih cepat dengan layanan terpercaya!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="feature-title">💰 Harga Terjangkau</h3>
+                        <p class="feature-desc">
+                            Dapatkan diskon dan penawaran menarik setiap hari. Motor berkualitas dengan harga terbaik!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-brand">
+                <i class="fas fa-motorcycle"></i> Dealermotor
+            </div>
+            <p class="footer-text">
+                🏍️ Temukan Motor Impian Anda 🏍️
+            </p>
+            <div class="footer-links">
+                <a href="#home">Beranda</a>
+                <a asp-controller="Customer" asp-action="Catalog">Katalog</a>
+                <a href="#features">Tentang</a>
+                <a asp-controller="Account" asp-action="Login">Masuk</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dealermotor. All Rights Reserved.</p>
+                <p class="footer-quote">
+                    "Motor Terbaik untuk Petualangan Terbaik" 🏍️
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
