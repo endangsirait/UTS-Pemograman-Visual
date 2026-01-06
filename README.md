@@ -1,4 +1,4 @@
-## Informasi Pribadi
+ler## Informasi Pribadi
 
 | **Atribut**      | **Detail**               |
 |------------------|--------------------------|
@@ -46,7 +46,7 @@ Dalam mata kuliah **Pemrograman Visual**, saya fokus pada:
 
 ## 1. Setting Web Service dan Configuration Web
 
-Untuk memulai penggunaan MarshLaundryDb, pastikan kamu telah melakukan konfigurasi web service dan pengaturan aplikasi dengan benar. Berikut adalah langkah-langkah konfigurasi yang perlu dilakukan:
+Untuk memulai penggunaan Dealer Motor, pastikan kamu telah melakukan konfigurasi web service dan pengaturan aplikasi dengan benar. Berikut adalah langkah-langkah konfigurasi yang perlu dilakukan:
 
 ### 1.1 **Install Dependencies (Untuk Backend dan Frontend)**
 
@@ -104,15 +104,15 @@ Nama Project: MarshLaundryDb
 
 Penjelasan:
 
-MarshLaundryDb adalah aplikasi web yang dirancang untuk membantu usaha laundry dalam mengelola layanan mereka secara lebih efisien. Platform ini memungkinkan pelanggan untuk membuat pemesanan laundry secara online, memantau status laundry mereka, dan melakukan pembayaran secara terintegrasi. Admin dapat mengelola pesanan, memperbarui status laundry, serta menghasilkan laporan transaksi dengan mudah.
+Dealer motor Honda merupakan salah satu unit usaha yang bergerak di bidang penjualan kendaraan roda dua serta pelayanan terkait, seperti pengelolaan data konsumen, stok motor, dan transaksi penjualan. Dalam praktiknya, proses pengelolaan data pada dealer sering kali masih dilakukan secara manual atau semi-komputerisasi, sehingga menimbulkan berbagai permasalahan seperti kesalahan pencatatan, keterlambatan pelayanan, serta kesulitan dalam penyusunan laporan penjualan.
 
 Alasan Menggunakan MarshLaundryDb:
 
-Otomatisasi Proses: Mengurangi kesalahan manual dan meningkatkan efisiensi pengelolaan laundry.
+Otomatisasi Proses: Mengurangi kesalahan manual dan meningkatkan efisiensi pengelolaan Dealermotor.
 
-Pengalaman Pengguna yang Lebih Baik: Dengan antarmuka yang responsif dan mudah digunakan, pelanggan dapat dengan mudah melakukan pemesanan dan memantau status laundry mereka.
+Pengalaman Pengguna yang Lebih Baik: Dengan antarmuka yang responsif dan mudah digunakan, pelanggan dapat dengan mudah melakukan pemesanan dan memantau status Pembelian mereka.
 
-Laporan dan Analitik: Memungkinkan pengelola untuk menghasilkan laporan tentang transaksi, status laundry, dan kinerja usaha secara real-time.
+Laporan dan Analitik: Memungkinkan pengelola untuk menghasilkan laporan tentang transaksi, status dealermotor, dan kinerja usaha secara real-time.
 
 3. Bisnis Proses
 
@@ -120,25 +120,25 @@ Proses bisnis dalam MarshLaundryDb meliputi beberapa tahapan penting sebagai ber
 
 3.1 Pelanggan Membuat Pesanan
 
-Pelanggan melakukan pemesanan laundry melalui antarmuka pengguna yang mudah dipahami. Mereka memilih jenis layanan yang diinginkan, mengisi informasi pengiriman, dan memilih metode pembayaran.
+Pelanggan melakukan pemesanan motor melalui antarmuka pengguna yang mudah dipahami. Mereka memilih jenis layanan yang diinginkan, mengisi informasi pengiriman, dan memilih metode pembayaran.
 
 3.2 Pengelolaan Pesanan oleh Admin
 
-Admin menerima pesanan yang masuk dan mengupdate status laundry (misalnya: sedang dicuci, selesai, atau dalam proses pengeringan). Sistem secara otomatis mengingatkan admin jika ada pesanan yang perlu diperhatikan.
+Admin menerima pesanan yang masuk dan mengupdate status motor (misalnya: pembelian Honda CBR150R, selesai, atau dalam proses Perjalanan ). Sistem secara otomatis mengingatkan admin jika ada pesanan yang perlu diperhatikan.
 
 3.3 Pembayaran dan Penyelesaian Pesanan
 
 Pelanggan dapat melakukan pembayaran menggunakan berbagai metode yang telah disediakan (misalnya: kartu kredit, transfer bank, pembayaran tunai).
 
-Setelah pembayaran dikonfirmasi, status pesanan diubah menjadi "selesai", dan pelanggan diberitahu untuk mengambil laundry mereka.
+Setelah pembayaran dikonfirmasi, status pesanan diubah menjadi "selesai", dan pelanggan diberitahu untuk pengambilan motor mereka.
 
-3.4 Pengambilan Laundry
+3.4 Pengambilan motor
 
-Pelanggan mengambil laundry mereka setelah status pesanan diperbarui menjadi selesai.
+Pelanggan mengambil motor mereka setelah status pesanan diperbarui menjadi selesai.
 
 4. Model Data
 
-Model data dalam MarshLaundryDb dirancang untuk menyimpan semua informasi yang diperlukan untuk pengelolaan pesanan dan transaksi. Berikut adalah beberapa model data yang digunakan:
+Model data dalam Dealermotor dirancang untuk menyimpan semua informasi yang diperlukan untuk pengelolaan pesanan dan transaksi. Berikut adalah beberapa model data yang digunakan:
 
 4.1 User Model
 
@@ -150,7 +150,7 @@ Digunakan untuk mengidentifikasi dan mengelola hak akses pengguna di sistem.
 
 Menyimpan informasi terkait setiap pesanan, termasuk jenis layanan, harga, status pesanan, dan ID pengguna yang terkait.
 
-Digunakan untuk melacak status laundry dari mulai pemesanan hingga pengambilan.
+Digunakan untuk melacak status motor dari mulai pemesanan hingga pengambilan.
 
 4.3 Payment Model
 
@@ -160,7 +160,7 @@ Digunakan untuk memproses pembayaran dan memverifikasi transaksi.
 
 5. Schema Tim dalam Mengelola Project
 
-Proyek MarshLaundryDb dikelola oleh tim yang terdiri dari beberapa role utama yang bekerja bersama untuk memastikan pengembangan proyek berjalan lancar:
+Proyek Dealermotor dikelola oleh tim yang terdiri dari beberapa role utama yang bekerja bersama untuk memastikan pengembangan proyek berjalan lancar:
 
 5.1 Frontend Developer
 
